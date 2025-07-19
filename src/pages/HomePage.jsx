@@ -37,12 +37,12 @@ const HeroSection = () => {
           </motion.p>
           
           <motion.div
-            className="hero-cta"
+            className="hero-cta d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 1.5 }}
           >
-            <button className="btn btn-glass btn-primary btn-lg me-3">
+            <button className="btn btn-glass btn-primary btn-lg">
               {t('hero.cta.primary')}
             </button>
             <button className="btn btn-glass btn-lg">
@@ -188,21 +188,23 @@ const ServicesSection = () => {
           </motion.p>
         </div>
         
-        <div className="row">
+        <div className="row g-4">
           {services.map((service, index) => (
-            <div key={index} className="col-lg-6 mb-4">
+            <div key={index} className="col-lg-6 col-md-6 col-sm-12">
               <motion.div
-                className="glass-card h-100"
+                className="glass-card h-100 d-flex flex-column"
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
               >
-                <div className="service-icon mb-3">
-                  <i className={service.icon}></i>
+                <div className="service-icon mb-3 text-center">
+                  <i className={`${service.icon} fs-1`}></i>
                 </div>
-                <h3 className="h4 fw-bold mb-3">{service.title}</h3>
-                <p style={{ color: 'var(--text-secondary)' }}>{service.description}</p>
+                <h3 className="h4 fw-bold mb-3 text-center">{service.title}</h3>
+                <p className="flex-grow-1 text-center" style={{ color: 'var(--text-secondary)' }}>
+                  {service.description}
+                </p>
               </motion.div>
             </div>
           ))}
@@ -237,8 +239,8 @@ const ContactSection = () => {
                 {t('contact.description')}
               </p>
               
-              <div className="contact-actions mb-5">
-                <button className="btn btn-glass btn-primary btn-lg me-3">
+              <div className="contact-actions mb-5 d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3">
+                <button className="btn btn-glass btn-primary btn-lg">
                   {t('contact.cta.primary')}
                 </button>
                 <button className="btn btn-glass btn-lg">
@@ -246,23 +248,23 @@ const ContactSection = () => {
                 </button>
               </div>
               
-              <div className="row">
-                <div className="col-md-4 mb-3">
-                  <div className="contact-item">
-                    <i className="bi bi-envelope-at"></i>
-                    <p className="mb-0">{t('contact.info.email')}</p>
+              <div className="row g-4">
+                <div className="col-md-4 col-sm-6">
+                  <div className="contact-item text-center">
+                    <i className="bi bi-envelope-at fs-2 mb-2 d-block"></i>
+                    <p className="mb-0 small">{t('contact.info.email')}</p>
                   </div>
                 </div>
-                <div className="col-md-4 mb-3">
-                  <div className="contact-item">
-                    <i className="bi bi-telephone"></i>
-                    <p className="mb-0">{t('contact.info.phone')}</p>
+                <div className="col-md-4 col-sm-6">
+                  <div className="contact-item text-center">
+                    <i className="bi bi-telephone fs-2 mb-2 d-block"></i>
+                    <p className="mb-0 small">{t('contact.info.phone')}</p>
                   </div>
                 </div>
-                <div className="col-md-4 mb-3">
-                  <div className="contact-item">
-                    <i className="bi bi-geo-alt"></i>
-                    <p className="mb-0">{t('contact.info.location')}</p>
+                <div className="col-md-4 col-sm-12">
+                  <div className="contact-item text-center">
+                    <i className="bi bi-geo-alt fs-2 mb-2 d-block"></i>
+                    <p className="mb-0 small">{t('contact.info.location')}</p>
                   </div>
                 </div>
               </div>

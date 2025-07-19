@@ -103,12 +103,12 @@ const StarlinkNavbar = () => {
             <li className="nav-item">
               <motion.button
                 className="language-toggle ms-2"
-                onClick={() => changeLanguage(language === 'en' ? 'es' : 'en')}
+                onClick={() => changeLanguage(language === 'en' ? 'si' : 'en')}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 title="Toggle Language"
               >
-                {language.toUpperCase()}
+                {language === 'en' ? 'EN' : 'සි'}
               </motion.button>
             </li>
             

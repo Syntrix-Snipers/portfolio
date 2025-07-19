@@ -5,6 +5,7 @@ import { TranslationProvider } from './contexts/TranslationContext'
 import HomePage from './pages/HomePage'
 import StarlinkNavbar from './components/StarlinkNavbar'
 import ScrollProgress from './components/ScrollProgress'
+import ParticleBackground from './components/ParticleBackground'
 
 // Import styles
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -83,6 +84,7 @@ function App() {
           </script>
         </Helmet>
         
+        <ParticleBackground />
         <ScrollProgress />
         <StarlinkNavbar />
         <main>
