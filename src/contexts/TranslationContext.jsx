@@ -56,49 +56,49 @@ const translations = {
     'contact.info.phone': '+1 (555) 123-4567',
     'contact.info.location': 'Global Remote Team'
   },
-  es: {
+  si: {
     // Navigation
-    'nav.mission': 'Misión',
-    'nav.capabilities': 'Capacidades',
-    'nav.launch': 'Lanzar',
+    'nav.mission': 'අරමුණ',
+    'nav.capabilities': 'හැකියාවන්',
+    'nav.launch': 'ආරම්භ කරන්න',
     
     // Hero Section
-    'hero.title.line1': 'Código Preciso.',
-    'hero.title.line2': 'Posibilidades Infinitas.',
-    'hero.subtitle': 'Creamos soluciones de software de próxima generación que impulsan tu negocio más allá de lo ordinario.',
-    'hero.cta.primary': 'Inicia Tu Misión',
-    'hero.cta.secondary': 'Explorar Soluciones',
+    'hero.title.line1': 'නිරවද්‍ය Code.',
+    'hero.title.line2': 'අසීමිත Possibilities.',
+    'hero.subtitle': 'අපි ඔබේ business එක සාමාන්‍ය මට්ටමින් ඔබ්බට ගෙන යන next-generation software solutions නිර්මාණය කරමු.',
+    'hero.cta.primary': 'ඔබේ Mission ආරම්භ කරන්න',
+    'hero.cta.secondary': 'Solutions ගවේෂණය කරන්න',
     
     // About Section
-    'about.title.line1': 'Diseñado para la',
-    'about.title.line2': 'Excelencia',
-    'about.description.1': 'En SyntaxSnipers, no solo escribimos código — arquitectamos el futuro. Nuestras soluciones de precisión impulsan la próxima generación de experiencias digitales.',
-    'about.description.2': 'Desde aplicaciones web de vanguardia hasta sistemas empresariales, entregamos software que supera las expectativas.',
-    'about.stats.projects': 'Proyectos Lanzados',
-    'about.stats.satisfaction': 'Satisfacción del Cliente',
-    'about.stats.engineers': 'Ingenieros Expertos',
+    'about.title.line1': 'Excellence සඳහා',
+    'about.title.line2': 'නිර්මාණය කළ',
+    'about.description.1': 'SyntaxSnipers හි අපි code ලිවන එක විතරක් නෙවෙයි — අපි future එක architect කරනවා. අපේ precision-crafted solutions නිසා next generation digital experiences වලට power කරනවා.',
+    'about.description.2': 'Cutting-edge web applications වල සිට enterprise-scale systems වලට, අපි expectations ඔබ්බට ගෙන යන software deliver කරනවා.',
+    'about.stats.projects': 'Launch කළ Projects',
+    'about.stats.satisfaction': 'Client Satisfaction',
+    'about.stats.engineers': 'Expert Engineers ලා',
     
     // Services Section
-    'services.title': 'Nuestras Capacidades',
-    'services.subtitle': 'Soluciones integrales para cada desafío digital',
-    'services.web.title': 'Desarrollo Web',
-    'services.web.description': 'Aplicaciones web de vanguardia construidas con frameworks y tecnologías modernas.',
-    'services.mobile.title': 'Soluciones Móviles',
-    'services.mobile.description': 'Aplicaciones móviles nativas y multiplataforma que ofrecen experiencias excepcionales.',
-    'services.enterprise.title': 'Sistemas Empresariales',
-    'services.enterprise.description': 'Soluciones empresariales escalables diseñadas para manejar requisitos comerciales complejos.',
-    'services.cloud.title': 'Arquitectura en la Nube',
-    'services.cloud.description': 'Infraestructura en la nube robusta y estrategias de implementación para máxima confiabilidad.',
+    'services.title': 'අපේ හැකියාවන්',
+    'services.subtitle': 'සෑම digital challenge එකකටම comprehensive solutions',
+    'services.web.title': 'Web Development',
+    'services.web.description': 'Modern frameworks සහ technologies සමඟ නිර්මාණය කළ cutting-edge web applications.',
+    'services.mobile.title': 'Mobile Solutions',
+    'services.mobile.description': 'Exceptional user experiences ලබා දෙන native සහ cross-platform mobile apps.',
+    'services.enterprise.title': 'Enterprise Systems',
+    'services.enterprise.description': 'Complex business requirements handle කරන්න design කළ scalable enterprise solutions.',
+    'services.cloud.title': 'Cloud Architecture',
+    'services.cloud.description': 'Maximum reliability සඳහා robust cloud infrastructure සහ deployment strategies.',
     
     // Contact Section
-    'contact.title.line1': '¿Listo para Lanzar tu',
-    'contact.title.line2': 'Próximo Proyecto?',
-    'contact.description': 'Hablemos sobre cómo podemos transformar tu visión en realidad. Nuestro equipo está listo para diseñar tu éxito.',
-    'contact.cta.primary': 'Iniciar Colaboración',
-    'contact.cta.secondary': 'Programar Consulta',
+    'contact.title.line1': 'ඔබේ Next Project එක',
+    'contact.title.line2': 'Launch කරන්න Ready ද?',
+    'contact.description': 'ඔබේ vision එක reality එකක් බවට transform කරන්නේ කොහොමද කියලා discuss කරමු. අපේ team ඔබේ success engineer කරන්න ready.',
+    'contact.cta.primary': 'Collaboration ආරම්භ කරන්න',
+    'contact.cta.secondary': 'Consultation Schedule කරන්න',
     'contact.info.email': 'info@syntaxsnipers.com',
     'contact.info.phone': '+1 (555) 123-4567',
-    'contact.info.location': 'Equipo Remoto Global'
+    'contact.info.location': 'Global Remote Team'
   }
 }
 
@@ -126,7 +126,7 @@ export const TranslationProvider = ({ children }) => {
   const getAvailableLanguages = () => {
     return Object.keys(translations).map(code => ({
       code,
-      name: code === 'en' ? 'English' : 'Español'
+      name: code === 'en' ? 'English' : 'සිංහල'
     }))
   }
 
@@ -140,7 +140,7 @@ export const TranslationProvider = ({ children }) => {
     t,
     getAvailableLanguages,
     isEnglish: language === 'en',
-    isSpanish: language === 'es'
+    isSinhala: language === 'si'
   }
 
   return (
