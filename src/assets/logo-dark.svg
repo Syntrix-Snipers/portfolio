@@ -1,0 +1,7 @@
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark theme logo with light text -->
+  <rect x="10" y="10" width="40" height="40" rx="8" fill="#3b82f6" stroke="#60a5fa" stroke-width="2"/>
+  <circle cx="30" cy="30" r="8" fill="#1e293b"/>
+  <text x="60" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">Syntrix</text>
+  <text x="60" y="40" font-family="Arial, sans-serif" font-size="10" fill="#cbd5e1">Innovative Solutions</text>
+</svg>

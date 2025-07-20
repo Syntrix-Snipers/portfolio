@@ -2,20 +2,32 @@ import React, { useState, useEffect } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useTheme } from '../contexts/ThemeContext'
 import { useTranslation } from '../contexts/TranslationContext'
+import { company, getLogo, navigation } from '../data/syntrix'
 
 const StarlinkNavbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const { scrollY } = useScroll()
-  const navbarOpacity = useTransform(scrollY, [0, 100], [0.95, 0.98])
+  const [activeSection, setActiveSection] = useState('hero')
   const { theme, toggleTheme, isDark } = useTheme()
-  const { t, language, changeLanguage, getAvailableLanguages } = useTranslation()
+  const { language, changeLanguage } = useTranslation()
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
+      const sections = navigation.menuItems.map(item => item.targetSection)
+      sections.unshift('hero') // Add hero section to the beginning
+      
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId)
+        if (element) {
+          const rect = element.getBoundingClientRect()
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            setActiveSection(sectionId)
+            break
+          }
+        }
+      }
     }
 
     window.addEventListener('scroll', handleScroll)
+    handleScroll() // Check initial section
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -28,76 +40,61 @@ const StarlinkNavbar = () => {
 
   return (
     <motion.nav 
-      className={`navbar navbar-expand-lg navbar-dark fixed-top ${isScrolled ? 'scrolled' : ''}`}
-      style={{ opacity: navbarOpacity }}
+      className="navbar navbar-expand-lg navbar-dark fixed-top glass-navbar"
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
     >
       <div className="container">
         <motion.a 
-          className="navbar-brand"
-          href="#home"
+          className={`navbar-brand d-flex align-items-center ${activeSection === 'hero' ? 'active' : ''}`}
+          href={navigation.brand.href}
           onClick={(e) => {
             e.preventDefault()
-            scrollToSection('hero')
+            scrollToSection(navigation.brand.targetSection)
+            setActiveSection(navigation.brand.targetSection)
           }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <strong>SyntaxSnipers</strong>
+          <img 
+            src={getLogo(theme)} 
+            alt={navigation.brand.logo.alt}
+            height={navigation.brand.logo.height}
+            className="me-2"
+          />
+          <strong>{navigation.brand.name}</strong>
         </motion.a>
         
         <button 
           className="navbar-toggler" 
           type="button" 
           data-bs-toggle="collapse" 
-          data-bs-target="#navbarNav"
+          data-bs-target={navigation.mobile.togglerTarget}
         >
           <span className="navbar-toggler-icon"></span>
         </button>
         
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div className="collapse navbar-collapse" id={navigation.mobile.collapseId}>
           <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <motion.a 
-                className="nav-link"
-                href="#about"
-                onClick={(e) => {
-                  e.preventDefault()
-                  scrollToSection('about')
-                }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {t('nav.mission')}
-              </motion.a>
-            </li>
-            <li className="nav-item">
-              <motion.a 
-                className="nav-link"
-                href="#services"
-                onClick={(e) => {
-                  e.preventDefault()
-                  scrollToSection('services')
-                }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {t('nav.capabilities')}
-              </motion.a>
-            </li>
-            <li className="nav-item">
-              <motion.a 
-                className="nav-link"
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault()
-                  scrollToSection('contact')
-                }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {t('nav.launch')}
-              </motion.a>
-            </li>
+            {navigation.menuItems.map((item) => (
+              <li key={item.id} className="nav-item">
+                <motion.a 
+                  className={`nav-link ${activeSection === item.targetSection ? 'active' : ''}`}
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    scrollToSection(item.targetSection)
+                    setActiveSection(item.targetSection)
+                  }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  title={item.description}
+                >
+                  {item.label}
+                </motion.a>
+              </li>
+            ))}
             
             {/* Language Toggle */}
             <li className="nav-item">
@@ -106,9 +103,9 @@ const StarlinkNavbar = () => {
                 onClick={() => changeLanguage(language === 'en' ? 'si' : 'en')}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                title="Toggle Language"
+                title={navigation.actions.language.title}
               >
-                {language === 'en' ? 'EN' : 'සි'}
+                {navigation.actions.language.options.find(opt => opt.code === language)?.label || 'EN'}
               </motion.button>
             </li>
             
@@ -119,13 +116,9 @@ const StarlinkNavbar = () => {
                 onClick={toggleTheme}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                title="Toggle Theme"
+                title={navigation.actions.theme.title}
               >
-                {isDark ? (
-                  <i className="bi bi-sun"></i>
-                ) : (
-                  <i className="bi bi-moon"></i>
-                )}
+                <i className={isDark ? navigation.actions.theme.darkIcon : navigation.actions.theme.lightIcon}></i>
               </motion.button>
             </li>
           </ul>
