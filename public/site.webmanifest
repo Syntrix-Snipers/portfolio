@@ -1,6 +1,6 @@
 {
-  "name": "SyntaxSnipers - Professional Software Development",
-  "short_name": "SyntaxSnipers",
+  "name": "Syntrix - Professional Software Development",
+  "short_name": "Syntrix",
   "description": "Professional software development company delivering cutting-edge solutions worldwide",
   "start_url": "/",
   "display": "standalone",
@@ -13,7 +13,7 @@
   "categories": ["business", "productivity", "technology"],
   "icons": [
     {
-      "src": "/vite.svg",
+      "src": "/fav.png",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
