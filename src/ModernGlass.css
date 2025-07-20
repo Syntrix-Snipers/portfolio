@@ -75,48 +75,100 @@ body {
   position: relative;
 }
 
-/* Particle Background Styles */
-.particle-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* Ensure content appears above particles */
+/* Performance optimizations */
 main {
   position: relative;
   z-index: 2;
+  will-change: auto;
+  contain: layout style paint;
 }
 
 .navbar {
   position: relative;
   z-index: 1000;
+  will-change: transform, opacity;
+  contain: layout style;
 }
 
 .scroll-progress {
   position: relative;
   z-index: 1001;
+  will-change: transform;
+  contain: strict;
 }
 
-/* Glass Effect Utility Classes */
+/* GPU acceleration for smooth animations */
+.glass-card,
+.btn-glass,
+.tech-item,
+.stat-item,
+.contact-item {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Optimize repaints */
+.hero-section,
+.about-section,
+.services-section,
+.contact-section {
+  contain: layout style paint;
+}
+
+/* Reduce motion for better performance on low-end devices */
+@media (prefers-reduced-motion: reduce) {
+  .glass-card:hover,
+  .btn-glass:hover,
+  .tech-item:hover,
+  .stat-item:hover,
+  .contact-item:hover {
+    transform: none;
+  }
+}
+
+/* Glass Effect Utility Classes - Optimized */
 .glass {
   background: var(--glass-bg);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
   border: var(--glass-border);
   box-shadow: var(--glass-shadow);
 }
 
-.glass-strong {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+/* Only apply backdrop-filter where supported and needed */
+@supports (backdrop-filter: blur(1px)) {
+  .glass {
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+  }
+  
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* Fallback for browsers without backdrop-filter support */
+@supports not (backdrop-filter: blur(1px)) {
+  .glass {
+    background: rgba(255, 255, 255, 0.15);
+  }
+  
+  [data-theme="dark"] .glass {
+    background: rgba(0, 0, 0, 0.25);
+  }
+  
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  }
+  
+  [data-theme="dark"] .glass-strong {
+    background: rgba(0, 0, 0, 0.4);
+  }
 }
 
 /* Hero Section */
