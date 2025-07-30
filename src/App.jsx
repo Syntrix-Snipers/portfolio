@@ -4,6 +4,7 @@ import { ThemeProvider } from './contexts/ThemeContext'
 import { TranslationProvider } from './contexts/TranslationContext'
 import HomePage from './pages/HomePage'
 import StarlinkNavbar from './components/StarlinkNavbar'
+import StarlinkFooter from './components/StarlinkFooter'
 import ScrollProgress from './components/ScrollProgress'
 import SEOOptimizer from './components/SEOOptimizer'
 import { company } from './data/syntrix'
@@ -132,6 +133,7 @@ function App() {
         <main>
           <HomePage />
         </main>
+        <StarlinkFooter/>
       </TranslationProvider>
     </ThemeProvider>
   )

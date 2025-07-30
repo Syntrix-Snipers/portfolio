@@ -8,7 +8,7 @@
   --light-text-secondary: #6b7280;
   --light-border: rgba(0, 0, 0, 0.1);
   --light-shadow: rgba(0, 0, 0, 0.1);
-  
+
   /* Dark Theme Colors */
   --dark-bg: #000000;
   --dark-surface: #111111;
@@ -17,16 +17,16 @@
   --dark-text-secondary: #a1a1aa;
   --dark-border: rgba(255, 255, 255, 0.1);
   --dark-shadow: rgba(0, 0, 0, 0.5);
-  
+
   /* Accent Colors */
   --accent-primary: #ffffff;
   --accent-secondary: #000000;
-  
+
   /* Glass Effect Variables */
   --glass-blur: 20px;
   --glass-border: 1px solid rgba(255, 255, 255, 0.2);
   --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  
+
   /* Transitions */
   --transition-fast: 0.2s ease;
   --transition-smooth: 0.3s ease;
@@ -108,6 +108,12 @@ main {
   perspective: 1000px;
 }
 
+.hero-background-video,
+.hero-background-overlay {
+  pointer-events: none;
+  user-select: none;
+}
+
 /* Optimize repaints */
 .hero-section,
 .about-section,
@@ -118,6 +124,7 @@ main {
 
 /* Reduce motion for better performance on low-end devices */
 @media (prefers-reduced-motion: reduce) {
+
   .glass-card:hover,
   .btn-glass:hover,
   .tech-item:hover,
@@ -140,7 +147,7 @@ main {
     backdrop-filter: blur(var(--glass-blur));
     -webkit-backdrop-filter: blur(var(--glass-blur));
   }
-  
+
   .glass-strong {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(30px);
@@ -155,17 +162,17 @@ main {
   .glass {
     background: rgba(255, 255, 255, 0.15);
   }
-  
+
   [data-theme="dark"] .glass {
     background: rgba(0, 0, 0, 0.25);
   }
-  
+
   .glass-strong {
     background: rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
   }
-  
+
   [data-theme="dark"] .glass-strong {
     background: rgba(0, 0, 0, 0.4);
   }
@@ -189,7 +196,7 @@ main {
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
+  background:
     radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
   pointer-events: none;
@@ -309,7 +316,7 @@ main {
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
+  background:
     radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
   pointer-events: none;
 }
@@ -708,7 +715,7 @@ main {
     max-width: 1400px;
     margin: 0 auto;
   }
-  
+
   .hero-title {
     font-size: clamp(4rem, 6vw, 6rem);
   }
@@ -719,11 +726,11 @@ main {
   .hero-title {
     font-size: clamp(3rem, 5vw, 4.5rem);
   }
-  
+
   .section-title {
     font-size: clamp(2rem, 4vw, 3rem);
   }
-  
+
   .glass-card {
     padding: 2rem;
   }
@@ -739,30 +746,31 @@ main {
     margin-top: 1rem;
     padding: 1rem;
   }
-  
+
   .nav-link {
     padding: 0.8rem 1rem !important;
     margin: 0.2rem 0;
     border-radius: 8px;
     text-align: center;
   }
-  
+
   .nav-link:hover {
     background: rgba(255, 255, 255, 0.1);
   }
-  
-  .theme-toggle, .language-toggle {
+
+  .theme-toggle,
+  .language-toggle {
     margin: 0.5rem auto !important;
     display: block;
     width: fit-content;
   }
-  
+
   .hero-cta {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
   }
-  
+
   .hero-cta .btn {
     width: 100%;
     max-width: 300px;
@@ -777,48 +785,48 @@ main {
     min-height: 100vh;
     padding: 120px 0 80px;
   }
-  
+
   .hero-title {
     font-size: clamp(2.5rem, 8vw, 3.5rem);
     margin-bottom: 1.5rem;
   }
-  
+
   .hero-subtitle {
     font-size: clamp(1rem, 4vw, 1.3rem);
     margin-bottom: 2rem;
     padding: 0 1rem;
   }
-  
+
   .section {
     padding: 4rem 0;
   }
-  
+
   .section-title {
     font-size: clamp(1.8rem, 6vw, 2.5rem);
     margin-bottom: 2rem;
   }
-  
+
   .tech-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
-  
+
   .stats-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     margin-top: 2rem;
   }
-  
+
   .glass-card {
     padding: 1.5rem;
     margin-bottom: 1.5rem;
   }
-  
+
   .btn-glass {
     padding: 0.9rem 1.8rem;
     font-size: 0.95rem;
   }
-  
+
   .scroll-indicator {
     bottom: 2rem;
     font-size: 1.2rem;
@@ -831,55 +839,55 @@ main {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  
+
   .hero-section {
     padding: 100px 0 60px;
   }
-  
+
   .hero-title {
     font-size: clamp(2rem, 10vw, 2.8rem);
     line-height: 1.2;
     margin-bottom: 1rem;
   }
-  
+
   .hero-subtitle {
     font-size: clamp(0.9rem, 5vw, 1.1rem);
     margin-bottom: 1.5rem;
     padding: 0 0.5rem;
   }
-  
+
   .section {
     padding: 3rem 0;
   }
-  
+
   .section-title {
     font-size: clamp(1.5rem, 8vw, 2rem);
     margin-bottom: 1.5rem;
     text-align: center;
   }
-  
+
   .tech-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
   .stats-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
     text-align: center;
   }
-  
+
   .stat-item {
     padding: 1rem;
     text-align: center;
   }
-  
+
   .stat-number {
     font-size: 2rem;
     display: block;
     margin-bottom: 0.5rem;
   }
-  
+
   .btn-glass {
     padding: 0.8rem 1.5rem;
     font-size: 0.9rem;
@@ -887,33 +895,34 @@ main {
     margin-bottom: 1rem;
     text-align: center;
   }
-  
+
   .hero-cta {
     width: 100%;
     padding: 0 1rem;
   }
-  
+
   .glass-card {
     padding: 1.2rem;
     margin-bottom: 1rem;
   }
-  
+
   .navbar-brand {
     font-size: 1.3rem;
   }
-  
+
   .nav-link {
     font-size: 1rem;
     padding: 1rem !important;
   }
-  
-  .theme-toggle, .language-toggle {
+
+  .theme-toggle,
+  .language-toggle {
     padding: 0.7rem;
     font-size: 0.9rem;
     margin: 0.5rem auto !important;
     width: 120px;
   }
-  
+
   .scroll-indicator {
     bottom: 1.5rem;
     font-size: 1rem;
@@ -925,24 +934,24 @@ main {
   .hero-title {
     font-size: clamp(1.8rem, 12vw, 2.5rem);
   }
-  
+
   .hero-subtitle {
     font-size: clamp(0.85rem, 6vw, 1rem);
   }
-  
+
   .section-title {
     font-size: clamp(1.3rem, 10vw, 1.8rem);
   }
-  
+
   .glass-card {
     padding: 1rem;
   }
-  
+
   .btn-glass {
     padding: 0.7rem 1.2rem;
     font-size: 0.85rem;
   }
-  
+
   .container {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
@@ -956,24 +965,25 @@ main {
     min-height: 100vh;
     padding: 80px 0 40px;
   }
-  
+
   .hero-title {
     font-size: clamp(1.8rem, 6vw, 2.5rem);
     margin-bottom: 1rem;
   }
-  
+
   .hero-subtitle {
     font-size: clamp(0.9rem, 3vw, 1.1rem);
     margin-bottom: 1.5rem;
   }
-  
+
   .section {
     padding: 2rem 0;
   }
 }
 
 /* High DPI / Retina displays */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
   .glass {
     backdrop-filter: blur(calc(var(--glass-blur) * 0.8));
     -webkit-backdrop-filter: blur(calc(var(--glass-blur) * 0.8));
@@ -987,7 +997,7 @@ main {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  
+
   .scroll-indicator {
     animation: none;
   }
@@ -1001,7 +1011,7 @@ main {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
   }
-  
+
   .btn-glass {
     border: 2px solid var(--text-primary);
     background: var(--bg-primary);
@@ -1054,8 +1064,13 @@ main {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Custom Scrollbar */
@@ -1080,30 +1095,32 @@ main {
 
 /* Touch-friendly improvements */
 @media (hover: none) and (pointer: coarse) {
+
   /* Touch devices */
   .btn-glass {
     min-height: 48px;
     min-width: 48px;
     padding: 1rem 2rem;
   }
-  
+
   .nav-link {
     min-height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  
-  .theme-toggle, .language-toggle {
+
+  .theme-toggle,
+  .language-toggle {
     min-height: 48px;
     min-width: 48px;
   }
-  
+
   .contact-item {
     padding: 1rem;
     margin: 0.5rem 0;
   }
-  
+
   .service-icon {
     font-size: 3rem !important;
   }
@@ -1137,18 +1154,19 @@ main {
 
 /* Print styles */
 @media print {
+
   .navbar,
   .theme-toggle,
   .language-toggle,
   .scroll-indicator {
     display: none !important;
   }
-  
+
   .hero-section {
     height: auto !important;
     page-break-after: always;
   }
-  
+
   .glass-card {
     border: 1px solid #000 !important;
     background: white !important;
@@ -1180,7 +1198,7 @@ main {
   .glass {
     background: rgba(255, 255, 255, 0.2);
   }
-  
+
   [data-theme="dark"] .glass {
     background: rgba(0, 0, 0, 0.3);
   }
