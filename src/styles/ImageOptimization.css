@@ -1,6 +1,15 @@
 /* Optimized Image Loading Utilities */
 
 /* Lazy Loading with Intersection Observer */
+.hero-background-video {
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero-background-overlay {
+  pointer-events: none;
+}
+
 .lazy-image {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
@@ -22,18 +31,18 @@
   position: relative;
   overflow: hidden;
   background-color: var(--bs-gray-100);
-  background-image: linear-gradient(45deg, 
-    var(--bs-gray-100) 25%, 
-    transparent 25%), 
-    linear-gradient(-45deg, 
-    var(--bs-gray-100) 25%, 
-    transparent 25%), 
-    linear-gradient(45deg, 
-    transparent 75%, 
-    var(--bs-gray-100) 75%), 
-    linear-gradient(-45deg, 
-    transparent 75%, 
-    var(--bs-gray-100) 75%);
+  background-image: linear-gradient(45deg,
+      var(--bs-gray-100) 25%,
+      transparent 25%),
+    linear-gradient(-45deg,
+      var(--bs-gray-100) 25%,
+      transparent 25%),
+    linear-gradient(45deg,
+      transparent 75%,
+      var(--bs-gray-100) 75%),
+    linear-gradient(-45deg,
+      transparent 75%,
+      var(--bs-gray-100) 75%);
   background-size: 20px 20px;
   background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
   animation: loading-shimmer 2s linear infinite;
@@ -43,6 +52,7 @@
   0% {
     background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
   }
+
   100% {
     background-position: 20px 0, 20px 10px, 30px -10px, 10px 0px;
   }
@@ -102,12 +112,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, 
-    rgba(255, 255, 255, 0.1) 25%, 
-    transparent 25%), 
-    linear-gradient(-45deg, 
-    rgba(255, 255, 255, 0.1) 25%, 
-    transparent 25%);
+  background: linear-gradient(45deg,
+      rgba(255, 255, 255, 0.1) 25%,
+      transparent 25%),
+    linear-gradient(-45deg,
+      rgba(255, 255, 255, 0.1) 25%,
+      transparent 25%);
   background-size: 20px 20px;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -128,7 +138,8 @@
 }
 
 /* High DPI display optimizations */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
   .optimized-image {
     image-rendering: -webkit-optimize-contrast;
   }
@@ -136,6 +147,7 @@
 
 /* Prefers reduced motion support */
 @media (prefers-reduced-motion: reduce) {
+
   .lazy-image,
   .progressive-image,
   .image-container::before {

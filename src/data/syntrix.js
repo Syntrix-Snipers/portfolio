@@ -9,7 +9,7 @@ export const getLogo = (theme) => {
 
 // Company Information
 export const company = {
-  name: 'Syntrix',
+  name: ' ',
   tagline: 'Innovative Software Solutions',
   description: 'We are a cutting-edge software development company specializing in web applications, mobile solutions, and enterprise software.',
   founded: '2020',
