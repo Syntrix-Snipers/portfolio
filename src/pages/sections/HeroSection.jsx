@@ -8,6 +8,13 @@ import Header3D from '../../components/Header3D'
 const HeroSection = () => {
   const { t } = useTranslation()
   const { theme } = useTheme()
+  const [isMobile, setIsMobile] = React.useState(window.innerWidth < 576)
+
+  React.useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 576)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   return (
     <section
@@ -62,24 +69,27 @@ const HeroSection = () => {
         }}
       >
         <div className="hero-content text-center w-100 px-3 px-md-5">
-          <Header3D/>
-          {/* <motion.div
-            className="mb-4"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <img
-              src={getLogo(theme)}
-              alt={`${company.name} Logo`}
-              style={{
-                height: '64px',
-                maxWidth: '90vw',
-                objectFit: 'contain',
-              }}
-              className="mb-3"
-            />
-          </motion.div> */}
+          {isMobile ? (
+            <motion.div
+              className="mb-4"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <img
+                src={getLogo(theme)}
+                alt={`${company.name} Logo`}
+                style={{
+                  height: '64px',
+                  maxWidth: '90vw',
+                  objectFit: 'contain',
+                }}
+                className="mb-3"
+              />
+            </motion.div>
+          ) : (
+            <Header3D />
+          )}
 
           <motion.h1
             className="hero-title mb-4 fw-bold"
