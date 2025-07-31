@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer'
 import { useTranslation } from '../../contexts/TranslationContext'
 import { team } from '../../data/syntrix'
 import OptimizedImage from '../../components/OptimizedImage'
+import TeamCard from './TeamCard'
 
 const TeamSection = () => {
   const [ref, inView] = useInView({
@@ -15,94 +16,35 @@ const TeamSection = () => {
   return (
     <section id="team" className="team-section section" ref={ref}>
       <div className="container">
-        <div className="text-center mb-5">
+        <div className="text-center mb-4 mb-md-5 px-2 px-md-0">
           <motion.h2 
-            className="section-title fw-bold"
+            className="section-title fw-bold mb-3"
+            style={{ fontSize: 'clamp(2rem, 6vw, 2.8rem)', lineHeight: 1.15 }}
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            {t('team.title')}
+            Meet Our Team
           </motion.h2>
           <motion.p 
-            className="lead"
+            className="lead mx-auto"
+            style={{
+              color: 'var(--text-secondary)',
+              fontSize: 'clamp(1.05rem, 2.5vw, 1.35rem)',
+              maxWidth: 600,
+              marginBottom: 0
+            }}
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            style={{ color: 'var(--text-secondary)' }}
           >
-            {t('team.subtitle')}
+            Our talented team of developers, designers, and strategists is dedicated to delivering innovative solutions and exceptional results for our clients.
           </motion.p>
         </div>
         
-        <div className="row justify-content-center">
+        <div className="row justify-content-center g-3 g-md-4">
           {team.map((member, index) => (
-            <div key={member.id} className="col-lg-4 col-md-6 mb-4">
-              <motion.div
-                className="team-card glass-card text-center p-4 h-100"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={inView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <OptimizedImage
-                  src={member.image}
-                  alt={member.name}
-                  className="team-photo rounded-circle mb-3 mx-auto d-block"
-                  style={{ 
-                    width: '120px', 
-                    height: '120px', 
-                    objectFit: 'cover',
-                    border: '3px solid var(--bs-primary)'
-                  }}
-                  lazy={true}
-                />
-                <h4 className="team-name fw-bold">{member.name}</h4>
-                <p className="team-position text-primary fw-semibold">{member.position}</p>
-                <p className="team-bio mb-3" style={{ color: 'var(--text-secondary)' }}>
-                  {member.bio}
-                </p>
-                <div className="team-skills mb-3">
-                  {member.skills.map((skill, idx) => (
-                    <span key={idx} className="badge bg-secondary me-1 mb-1">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-                <div className="team-social">
-                  {member.social.linkedin && (
-                    <motion.a 
-                      href={member.social.linkedin} 
-                      className="btn btn-outline-primary btn-sm me-2"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <i className="bi-linkedin"></i>
-                    </motion.a>
-                  )}
-                  {member.social.github && (
-                    <motion.a 
-                      href={member.social.github} 
-                      className="btn btn-outline-primary btn-sm me-2"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <i className="bi-github"></i>
-                    </motion.a>
-                  )}
-                  {member.social.twitter && (
-                    <motion.a 
-                      href={member.social.twitter} 
-                      className="btn btn-outline-primary btn-sm"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <i className="bi-twitter"></i>
-                    </motion.a>
-                  )}
-                </div>
-              </motion.div>
-            </div>
+            <TeamCard key={member.id} member={member} index={index} inView={inView} />
           ))}
         </div>
       </div>

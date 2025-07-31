@@ -20,7 +20,15 @@ const HeroSection = () => {
     <section
       id="hero"
       className="hero-section position-relative overflow-hidden min-vh-100 d-flex align-items-center"
-      style={{ minHeight: '100vh' }}
+      style={{
+        minHeight: '100vh',
+        marginTop: '-56px',
+        paddingTop: '56px',
+        paddingBottom: 0,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+      }}
     >
       {/* Video Background */}
       <video
@@ -36,11 +44,15 @@ const HeroSection = () => {
           left: 0,
           width: '100vw',
           height: '100vh',
+          minHeight: '100%',
+          minWidth: '100%',
           objectFit: 'cover',
           zIndex: 0,
           opacity: 0.7,
           pointerEvents: 'none',
           userSelect: 'none',
+          aspectRatio: '16/9',
+          maxHeight: '100vh',
         }}
       />
       {/* Overlay for glass effect */}
@@ -66,37 +78,42 @@ const HeroSection = () => {
           position: 'relative',
           zIndex: 2,
           minHeight: '100vh',
+          paddingTop: '8vw',
+          paddingBottom: '4vw',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
         }}
       >
-        <div className="hero-content text-center w-100 px-3 px-md-5">
-          {isMobile ? (
-            <motion.div
-              className="mb-4"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <img
-                src={getLogo(theme)}
-                alt={`${company.name} Logo`}
-                style={{
-                  height: '64px',
-                  maxWidth: '90vw',
-                  objectFit: 'contain',
-                }}
-                className="mb-3"
-              />
-            </motion.div>
-          ) : (
-            <Header3D />
-          )}
+        <div className="hero-content text-center w-100 px-2 px-md-5" style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <motion.div
+            className="mb-4"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <img
+              src={getLogo(theme)}
+              alt={`${company.name} Logo`}
+              style={{
+                height: '48px',
+                maxWidth: '80vw',
+                objectFit: 'contain',
+                width: 'auto',
+                display: 'block',
+                margin: '0 auto',
+              }}
+              className="mb-3"
+            />
+          </motion.div>
 
           <motion.h1
             className="hero-title mb-4 fw-bold"
             style={{
-              fontSize: 'clamp(2.2rem, 6vw, 4rem)',
+              fontSize: 'clamp(1.5rem, 7vw, 3.5rem)',
               lineHeight: 1.1,
               wordBreak: 'break-word',
+              marginBottom: '1.2rem',
             }}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -107,11 +124,12 @@ const HeroSection = () => {
           </motion.h1>
 
           <motion.p
-            className="hero-subtitle mb-5"
+            className="hero-subtitle mb-4 mb-md-5"
             style={{
-              fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)',
+              fontSize: 'clamp(1rem, 3vw, 1.3rem)',
               maxWidth: 700,
               margin: '0 auto',
+              lineHeight: 1.4,
             }}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -122,14 +140,15 @@ const HeroSection = () => {
 
           <motion.div
             className="hero-cta d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3"
+            style={{ rowGap: 12, columnGap: 18 }}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 1.5 }}
           >
-            <button className="btn btn-glass btn-primary btn-lg w-100 w-sm-auto">
+            <button className="btn btn-glass btn-primary btn-lg w-100 w-sm-auto" style={{ minWidth: 140 }}>
               {t('hero.cta.primary')}
             </button>
-            <button className="btn btn-glass btn-lg w-100 w-sm-auto">
+            <button className="btn btn-glass btn-lg w-100 w-sm-auto" style={{ minWidth: 140 }}>
               {t('hero.cta.secondary')}
             </button>
           </motion.div>
@@ -148,7 +167,7 @@ const HeroSection = () => {
           zIndex: 2,
           position: 'absolute',
           left: '50%',
-          bottom: 24,
+          bottom: '5px',
           transform: 'translateX(-50%)',
           fontSize: '2rem',
           color: theme === 'dark' ? '#fff' : '#222',

@@ -40,7 +40,7 @@ const StarlinkNavbar = () => {
 
   return (
     <motion.nav 
-      className="navbar navbar-expand-lg navbar-dark fixed-top glass-navbar"
+      className="navbar navbar-expand-lg navbar-dark fixed-top glass-navbar position-absolute"
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
