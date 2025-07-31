@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { useTranslation } from '../../contexts/TranslationContext'
 import { useTheme } from '../../contexts/ThemeContext'
 import { company, getLogo } from '../../data/syntrix.js'
+import Header3D from '../../components/Header3D'
 
 const HeroSection = () => {
   const { t } = useTranslation()
@@ -61,7 +62,8 @@ const HeroSection = () => {
         }}
       >
         <div className="hero-content text-center w-100 px-3 px-md-5">
-          <motion.div
+          <Header3D/>
+          {/* <motion.div
             className="mb-4"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -77,7 +79,7 @@ const HeroSection = () => {
               }}
               className="mb-3"
             />
-          </motion.div>
+          </motion.div> */}
 
           <motion.h1
             className="hero-title mb-4 fw-bold"

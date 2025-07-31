@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { useTranslation } from '../../contexts/TranslationContext'
 import { about, technologies } from '../../data/syntrix'
+import Spline3D from '../../components/Spline3D'
 
 const AboutSection = () => {
   const [ref, inView] = useInView({
@@ -61,8 +62,9 @@ const AboutSection = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               <div className="tech-grid d-flex flex-wrap justify-content-center gap-3 py-2">
+                <Spline3D style={{ margin: '0 auto', maxWidth: 900 }} />
                 {technologies.frontend.slice(0, 3).map((tech, index) => (
-                  <motion.div 
+                  <motion.div
                     key={tech}
                     className="tech-item text-center px-3 py-2 rounded shadow-sm mb-2"
                     style={{ background: 'rgba(255,255,255,0.08)', minWidth: 90, fontSize: 'clamp(1rem,2vw,1.2rem)' }}
@@ -74,7 +76,7 @@ const AboutSection = () => {
                   </motion.div>
                 ))}
                 {technologies.backend.slice(0, 3).map((tech, index) => (
-                  <motion.div 
+                  <motion.div
                     key={tech}
                     className="tech-item text-center px-3 py-2 rounded shadow-sm mb-2"
                     style={{ background: 'rgba(255,255,255,0.08)', minWidth: 90, fontSize: 'clamp(1rem,2vw,1.2rem)' }}
