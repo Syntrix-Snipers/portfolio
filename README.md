@@ -60,12 +60,6 @@ A modern, responsive portfolio website built with React, Vite, and Bootstrap sho
 - FAQ section
 - Project timeline information
 
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js (v18 or higher)
-- npm or yarn
-
 ## 📱 Responsive Design
 
 The website is fully responsive and optimized for:
@@ -91,26 +85,6 @@ The website is fully responsive and optimized for:
 - Focus management
 - ARIA labels and descriptions
 
-## 🔧 Customization
-
-### Updating Site Configuration
-Edit `src/config/siteConfig.js` to update:
-- Company information
-- Contact details
-- Social media links
-- Navigation menu
-- Service categories
-
-### Styling
-- Global styles: `src/index.css`
-- Component styles: `src/App.css`
-- Bootstrap customization in CSS variables
-
-### Adding New Pages
-1. Create page component in `src/pages/`
-2. Add route in `src/App.jsx`
-3. Update navigation in `src/components/Navbar.jsx`
-
 ## 📈 Performance
 
 - Lighthouse Score: 90+
@@ -132,14 +106,6 @@ Edit `src/config/siteConfig.js` to update:
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Run tests and linting
-5. Submit a pull request
-
 ## 📄 License
 
 This project is licensed under the MIT License.
@@ -147,8 +113,8 @@ This project is licensed under the MIT License.
 ## 📞 Support
 
 For support or questions, contact us at:
-- Email: info@syntaxsnipers.com
-- Phone: +1 (555) 123-4567
+- Email: hey.syntrix@gmail.com
+- Phone: +94 71 125 8917
 
 ## 🙏 Acknowledgments
 
@@ -159,5 +125,5 @@ For support or questions, contact us at:
 
 ---
 
-Built with ❤️ by the SyntaxSnipers team
+Built with ❤️ by the SyntaxSnipers team © 2025 All Rights Reserved
 #
