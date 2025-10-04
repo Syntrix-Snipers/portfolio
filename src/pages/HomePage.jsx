@@ -3,7 +3,7 @@ import HeroSection from './sections/HeroSection'
 import AboutSection from './sections/AboutSection'
 import ServicesSection from './sections/ServicesSection'
 import PortfolioSection from './sections/PortfolioSection'
-import TeamSection from './sections/TeamSection'
+// import TeamSection from './sections/TeamSection'
 import ContactSection from './sections/ContactSection'
 
 // Main HomePage Component
@@ -14,7 +14,7 @@ const HomePage = () => {
       <AboutSection />
       <ServicesSection />
       <PortfolioSection />
-      <TeamSection />
+      {/* <TeamSection /> */}
       <ContactSection />
     </div>
   )
