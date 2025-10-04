@@ -14,7 +14,7 @@ export const company = {
   description: 'We are a cutting-edge software development company specializing in web applications, mobile solutions, and enterprise software.',
   founded: '2020',
   email: 'info@syntrix.com',
-  phone: '+1 (555) 123-4567',
+  phone: '+94 (555) 123-4567',
   location: 'Sri Lanka',
   social: {
     github: 'https://github.com/syntrix',
@@ -375,7 +375,7 @@ export const contact = {
     country: 'SL'
   },
   phone: {
-    primary: '+1 (555) 123-4567',
+    primary: '+1 (555) 123-457',
     support: '+1 (555) 123-4568'
   },
   email: {
