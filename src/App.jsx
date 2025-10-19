@@ -8,6 +8,7 @@ import StarlinkFooter from './components/StarlinkFooter'
 import ScrollProgress from './components/ScrollProgress'
 import SEOOptimizer from './components/SEOOptimizer'
 import { company } from './data/syntrix'
+import ParticlesBackground from './components/ParticlesBackground'
 
 // Import styles
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -27,12 +28,12 @@ function App() {
           <meta name="author" content={company.name} />
           <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
           <link rel="canonical" href={`https://${company.name.toLowerCase()}.com/`} />
-          
+
           {/* Viewport and Mobile Optimization */}
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
           <meta name="theme-color" content="#2563eb" />
           <meta name="color-scheme" content="light dark" />
-          
+
           {/* Open Graph / Facebook */}
           <meta property="og:type" content="website" />
           <meta property="og:url" content={`https://${company.name.toLowerCase()}.com/`} />
@@ -44,7 +45,7 @@ function App() {
           <meta property="og:image:alt" content={`${company.name} - Professional Software Development Company`} />
           <meta property="og:site_name" content={company.name} />
           <meta property="og:locale" content="en_US" />
-          
+
           {/* Twitter / X */}
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:url" content={`https://${company.name.toLowerCase()}.com/`} />
@@ -52,7 +53,7 @@ function App() {
           <meta name="twitter:description" content={company.description} />
           <meta name="twitter:image" content={`https://${company.name.toLowerCase()}.com/twitter-card.jpg`} />
           <meta name="twitter:image:alt" content={`${company.name} Logo and Services`} />
-          
+
           {/* App Meta Tags */}
           <meta name="application-name" content={company.name} />
           <meta name="apple-mobile-web-app-title" content={company.name} />
@@ -60,16 +61,16 @@ function App() {
           <meta name="apple-mobile-web-app-status-bar-style" content="default" />
           <meta name="mobile-web-app-capable" content="yes" />
           <meta name="msapplication-TileColor" content="#2563eb" />
-          
+
           {/* Performance Optimization */}
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
           <link rel="dns-prefetch" href="//fonts.googleapis.com" />
           <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-          
+
           {/* Optimized Google Fonts */}
-          <link 
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" 
+          <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
             rel="stylesheet"
             media="print"
             onLoad="this.media='all'"
@@ -80,18 +81,18 @@ function App() {
               rel="stylesheet"
             />`}
           </noscript>
-          
+
           {/* Favicon */}
           <link rel="icon" type="image/svg+xml" href="/vite.svg" />
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
           <link rel="manifest" href="/site.webmanifest" />
-          
+
           {/* Security Headers */}
           <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
           <meta httpEquiv="X-Frame-Options" content="DENY" />
           <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
           <meta name="referrer" content="strict-origin-when-cross-origin" />
-          
+
           {/* Structured Data */}
           <script type="application/ld+json">
             {JSON.stringify({
@@ -126,14 +127,15 @@ function App() {
             })}
           </script>
         </Helmet>
-        
+
         <SEOOptimizer />
+        <ParticlesBackground />
         <ScrollProgress />
         <StarlinkNavbar />
         <main>
           <HomePage />
         </main>
-        <StarlinkFooter/>
+        <StarlinkFooter />
       </TranslationProvider>
     </ThemeProvider>
   )
