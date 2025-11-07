@@ -36,19 +36,19 @@ export const about = {
   },
   stats: {
     projects: {
-      number: '50+',
+      number: '1+',
       label: 'Projects Completed'
     },
     satisfaction: {
-      number: '98%',
+      number: '100%',
       label: 'Client Satisfaction'
     },
     engineers: {
-      number: '15+',
+      number: '5+',
       label: 'Expert Engineers'
     },
     experience: {
-      number: '5+',
+      number: '1+',
       label: 'Years Experience'
     }
   },
@@ -107,13 +107,13 @@ export const navigation = {
       targetSection: 'portfolio',
       description: 'View our completed projects'
     },
-    {
-      id: 'team',
-      label: 'Team',
-      href: '#team',
-      targetSection: 'team',
-      description: 'Meet our expert developers'
-    },
+    // {
+    //   id: 'team',
+    //   label: 'Team',
+    //   href: '#team',
+    //   targetSection: 'team',
+    //   description: 'Meet our expert developers'
+    // },
     {
       id: 'contact',
       label: 'Contact',
@@ -305,18 +305,6 @@ export const team = [
     social: {
       linkedin: 'https://linkedin.com/in/srishanmandawala',
       github: 'https://github.com/srishanmandawala'
-    }
-  },
-  {
-    id: 'viduni-waidyarathna',
-    name: 'Viduni Waidyarathna',
-    position: 'Co-Founder & Full-Stack Developer',
-    bio: 'Backend specialist with deep knowledge of databases and server architecture.',
-    image: '/images/team/viduni-waidyarathna.jpg',
-    skills: ['Node.js', 'Python', 'Database Design', 'Full-Stack Development'],
-    social: {
-      linkedin: 'https://linkedin.com/in/viduniwaidyarathna',
-      github: 'https://github.com/viduniwaidyarathna'
     }
   }
 ]

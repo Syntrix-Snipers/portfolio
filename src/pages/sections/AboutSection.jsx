@@ -53,8 +53,8 @@ const AboutSection = () => {
               </div>
             </motion.div>
           </div>
-          {/* Tech Grid Column */}
-          <div className="col-12 col-lg-6 d-flex flex-column justify-content-center mb-4 mb-lg-0 px-2 px-md-4">
+          {/* Tech Grid Column (web only: hidden on mobile) */}
+          <div className="col-12 col-lg-6 d-none d-lg-flex flex-column justify-content-center mb-4 mb-lg-0 px-2 px-md-4">
             <motion.div
               className="tech-visualization"
               initial={{ opacity: 0, x: 50 }}

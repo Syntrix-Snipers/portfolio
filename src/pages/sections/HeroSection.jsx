@@ -21,6 +21,11 @@ const HeroSection = () => {
       id="hero"
       className="hero-section position-relative overflow-hidden min-vh-100 d-flex align-items-center"
       style={{
+        // remove background
+        background: 'transparent',
+        backgroundImage: 'none',
+        backgroundColor: 'transparent',
+
         minHeight: '100vh',
         marginTop: '-56px',
         paddingTop: '56px',
@@ -30,53 +35,10 @@ const HeroSection = () => {
         justifyContent: 'center',
       }}
     >
-      {/* Video Background */}
-      <video
-        className="hero-background-video"
-        src="https://videos.pexels.com/video-files/7649289/7649289-uhd_2560_1440_30fps.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100vw',
-          height: '100vh',
-          minHeight: '100%',
-          minWidth: '100%',
-          objectFit: 'cover',
-          zIndex: 0,
-          opacity: 0.7,
-          pointerEvents: 'none',
-          userSelect: 'none',
-          aspectRatio: '16/9',
-          maxHeight: '100vh',
-        }}
-      />
-      {/* Overlay for glass effect */}
-      <div
-        className="hero-background-overlay"
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100vw',
-          height: '100vh',
-          background: theme === 'dark'
-            ? 'rgba(10, 10, 20, 0.55)'
-            : 'rgba(255,255,255,0.35)',
-          backdropFilter: 'blur(2px)',
-          zIndex: 1,
-          pointerEvents: 'none',
-        }}
-      />
       <div
         className="container h-100 d-flex align-items-center justify-content-center"
         style={{
           position: 'relative',
-          zIndex: 2,
           minHeight: '100vh',
           paddingTop: '8vw',
           paddingBottom: '4vw',
