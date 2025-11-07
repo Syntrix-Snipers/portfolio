@@ -13,12 +13,12 @@ export const company = {
   tagline: 'Innovative Software Solutions',
   description: 'We are a cutting-edge software development company specializing in web applications, mobile solutions, and enterprise software.',
   founded: '2020',
-  email: 'info@syntrix.com',
-  phone: '+94 (555) 123-4567',
+  email: 'hey.syntrix@gmail.com',
+  phone: '+94 70 151 4279',
   location: 'Sri Lanka',
   social: {
-    github: 'https://github.com/syntrix',
-    linkedin: 'https://linkedin.com/company/syntrix',
+    github: 'https://github.com/Syntrix-Snipers',
+    linkedin: 'https://www.linkedin.com/company/109033527/',
     twitter: 'https://twitter.com/syntrix',
     facebook: 'https://facebook.com/syntrix'
   }
@@ -363,7 +363,7 @@ export const contact = {
     country: 'SL'
   },
   phone: {
-    primary: '+1 (555) 123-457',
+    primary: '+1 () 123-457',
     support: '+1 (555) 123-4568'
   },
   email: {
